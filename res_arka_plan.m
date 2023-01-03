@@ -1,0 +1,12 @@
+background=imread('back.jpg');
+A=imread('tommy1.bmp');
+B=imread('jerry1.bmp');
+object=A+B;
+background=imresize(background,[size(object,1),size(object,2)]);
+Im3=uint8(zeros(size(object)));
+whitelmg=uint8(ones((object)));
+mask=whitelmg./object;
+im3=whitelmg./object;
+figure,imshow(mask);
+finalmg=(background.*im3)+object;
+figure,imshow(finallmg)
